@@ -1,0 +1,14 @@
+package templates;
+
+public class Snippet {
+	@RequestMapping("/")
+		public String index() throws Exception {
+			return "index";
+		}
+		
+		@RequestMapping("/test")
+		public String test() throws Exception {
+			return "test";
+		}
+}
+

@@ -1,0 +1,12 @@
+
+server.port=8080
+
+spring.datasource.hikari.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.hikari.jdbc-url=jdbc:mysql://13.209.64.113:3306/java404db?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+spring.datasource.hikari.username=java404user
+spring.datasource.hikari.password=BITCjava404!@#$
+spring.datasource.hikari.connection-test-query=SELECT 1
+
+
+spring.mvc.hiddenmethod.filter.enabled=true
+

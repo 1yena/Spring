@@ -1,0 +1,15 @@
+package com.example.demo.controller;
+
+@Controller
+public class DeployController {
+
+	@RequestMapping("/")
+	public String index() throws Exception {
+		return "index";
+	}
+	
+	@RequestMapping("/test")
+	public String test() throws Exception {
+		return "test";
+	}
+}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>footer 영역</title>
+</head>
+<body>
+	<footer th:fragment="footer(param1, param2)" class="container-fluid mt-5 p-5 text-center border-top">
+		<p class="lead text-muted">made by bitc</p>
+		<p class="lead text-muted" th:text="${param1}">made by bitc</p>
+		<p class="lead text-muted" th:text="${param2}">made by bitc</p>
+	</footer>
+</body>
+</html>

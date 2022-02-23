@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bitc.java404.mapper.CatShopProductMapper">
+
+	<select id="selectHotList" resultType="com.bitc.java404.dto.ProductDto">
+		<![CDATA[ 
+			SELECT
+				product_seq, product_name, product_sale, product_img
+			FROM
+				t_product
+			WHERE
+				product_state = 'hot'
+			limit 10
+		]]>
+	</select>
+	
+	<select id="selectNewList" resultType="com.bitc.java404.dto.ProductDto">
+		<![CDATA[ 
+			SELECT
+				product_seq, product_name, product_sale, product_img
+			FROM
+				t_product
+			WHERE
+				product_state = 'new'
+			 limit 10
+		]]>
+	</select>
+
+
+</mapper>

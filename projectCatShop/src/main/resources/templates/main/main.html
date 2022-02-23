@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>메인화면</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+
+<!-- ************************이미지 이름 바꾸기 !!!!! 영어로 -->
+
+
+
+
+
+
+	<header  th:include="layout/header :: header(${session})"></header>
+			
+	<main class="container" style="margin-top: 100px">
+		
+		<div class="container">
+		
+        <div id="div-carousel" class="carousel slide carousel-fade mb-4" data-bs-ride="carousel">
+        	<div class="carousel-inner p-5 mt-1">
+            	<div class="carousel-item active" data-bs-interval="2000">
+                	<img src="/images/maincat.jpg" alt="" class="w-100" style="height: 500px;">
+            	</div>
+	            <div class="carousel-item" data-bs-interval="2000">
+	                <img src="/images/baby.jpg" alt="" class="w-100" style="height: 500px;">
+	            </div>
+	            <div class="carousel-item" data-bs-interval="2000">
+	                <img src="/images/caro.jpg" alt="" class="w-100" style="height: 500px;">
+	            </div>
+	            <div class="carousel-item" data-bs-interval="2000">
+	                <img src="/images/incat.jpg" alt="" class="w-100" style="height: 500px;">
+	            </div>
+        	</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#div-carousel" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon"></span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#div-carousel" data-bs-slide="next">
+				<span class="carousel-control-next-icon"></span>
+			</button>
+       	</div>
+        <div class="container mb-5">
+            <div class="row mb-3">
+              <div class="col-sm-3">
+                <div class="card shadow-sm">
+                  <img class="card-img-top" src="/images/gaga.jpg" style="height: 300px;">
+                  <div class="card-body">
+                    <h5 class="card-text text-center">가성비</h5>
+                    <p class="card-text text-center">고냥님을 모시는 <br>집사님들의 지갑을<br> 지켜드립니다</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="card shadow-sm">
+                  <img class="card-img-top" src="/images/pum.png" style="height: 300px;">
+                  <div class="card-body">
+                    <h5 class="card-text text-center">품질</h5>
+                    <p class="card-text text-center">고양님이 직접 물고 뜯고<br> 맛보고 즐기며 꼼꼼한 검수를<br>거쳤습니다</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="card shadow-sm">
+                  <img class="card-img-top" src="/images/design.jpg" style="height: 300px;">
+                  <div class="card-body">
+                    <h5 class="card-text text-center">디자인</h5>
+                    <p class="card-text text-center">감성충만 디자인으로<br>고양님 맘에 쏙!<br>집사 만족도 쏙!</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="card shadow-sm">
+                  <img class="card-img-top" src="/images/cho.jpg" style="height: 300px;">
+                  <div class="card-body">
+                    <h5 class="card-text text-center">냥청미</h5>
+                    <p class="card-text text-center">한껏 더 귀여워진<br>냥청냥청<br>사랑해</p>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          
+          
+          
+          <!-- ******************************************************************************************************************************** -->   
+          
+			<br><br><br><br>
+			<div class="container mb-5">
+			<h3>추천상품</h3>
+			<div class="row mb-3 d-flex flex-wrap">
+				<div th:if="${#lists.size(hotList)} > 0" th:each="item : ${hotList}" class="col-sm-3">
+					<div class="card shadow-sm">
+						<img th:src="@{${item.productImg}}" class="card-img-top" src="/images/추천상품1.jpg" style="height: 300px;">
+						<div class="card-body">
+							<h5 th:text="${item.productName}" class="card-text text-center">롱꼬리사탕</h5>
+							<p th:text="${item.productSale}" class="card-text text-center">5,200원</p>
+						</div>
+					</div>
+				</div>
+			</div>
+            <!-- <div class="row mb-3">
+              <div class="col-sm">
+                <div class="card shadow-sm">
+                  <img class="card-img-top" src="/images/추천상품1.jpg" style="height: 300px;">
+                  <div class="card-body">
+                    <h5 class="card-text text-center">롱꼬리사탕</h5>
+                    <p class="card-text text-center">5,200원</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="card shadow-sm">
+                  <img class="card-img-top" src="/images/추천상품2.jpg" style="height: 300px;">
+                  <div class="card-body">
+                    <h5 class="card-text text-center">메리츄 오메가3</h5>
+                    <p class="card-text text-center">18,00원</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="card shadow-sm">
+                  <img class="card-img-top" src="/images/추천상품3.jpg" style="height: 300px;">
+                  <div class="card-body">
+                    <h5 class="card-text text-center">페로페로 닭가슴살</h5>
+                    <p class="card-text text-center">400원</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="card shadow-sm">
+                  <img class="card-img-top" src="/images/추천상품4.jpg" style="height: 300px;">
+                  <div class="card-body">
+                    <h5 class="card-text text-center">높이조절 밥그릇</h5>
+                    <p class="card-text text-center">19,800원</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="card shadow-sm">
+                  <img class="card-img-top" src="/images/추천상품5.jpg" style="height: 300px;">
+                  <div class="card-body">
+                    <h5 class="card-text text-center">토로토로 캣스틱 8개</h5>
+                    <p class="card-text text-center">22,500원</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            
+            <div class="row mb-3">
+              <div class="col-sm">
+                <div class="card shadow-sm">
+                  <img class="card-img-top" src="/images/추천상품6.jpg" style="height: 300px;">
+                  <div class="card-body">
+                    <h5 class="card-text text-center">아이시아 파우치</h5>
+                    <p class="card-text text-center">13,500원</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="card shadow-sm">
+                  <img class="card-img-top" src="/images/추천상품7.jpg" style="height: 300px;">
+                  <div class="card-body">
+                    <h5 class="card-text text-center">엘라이신 파우더</h5>
+                    <p class="card-text text-center">10,800원원</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="card shadow-sm">
+                  <img class="card-img-top" src="/images/추천상품8.jpg" style="height: 300px;">
+                  <div class="card-body">
+                    <h5 class="card-text text-center">올바디펫티슈 30매</h5>
+                    <p class="card-text text-center">2,200원</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="card shadow-sm">
+                  <img class="card-img-top" src="/images/추천상품9.jpg" style="height: 300px;">
+                  <div class="card-body">
+                    <h5 class="card-text text-center">캣헬시 파우치 10종</h5>
+                    <p class="card-text text-center">17,900원</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="card shadow-sm">
+                  <img class="card-img-top" src="/images/추천상품10.jpg" style="height: 300px;">
+                  <div class="card-body">
+                    <h5 class="card-text text-center">원목 물그릇</h5>
+                    <p class="card-text text-center">22,800원</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+          
+          
+       <!-- ******************************************************************************************************************************** -->   
+          <br><br><br><br>
+          <div class="container mb-5">
+          <h3>신상품</h3>
+          
+          <div class="row mb-3">
+				<div th:if="${#lists.size(newList)} > 0" th:each="item : ${newList}" class="col-sm">
+					<div class="card shadow-sm">
+						<img th:src="@{${item.productImg}}" class="card-img-top" src="/images/추천상품1.jpg" style="height: 300px;">
+						<div class="card-body">
+							<h5 th:text="${item.productName}" class="card-text text-center">롱꼬리사탕</h5>
+							<p th:text="${item.productSale}" class="card-text text-center">5,200원</p>
+						</div>
+					</div>
+				</div>
+			</div>
+          
+          
+          
+          
+            <!-- <div class="row mb-3">
+              <div class="col-sm">
+                <div class="card shadow-sm">
+                  <img class="card-img-top" src="/images/신상품1.jpg" style="height: 300px;">
+                  <div class="card-body">
+                    <h5 class="card-text text-center">모던 원목 캣타워</h5>
+                    <p class="card-text text-center">230,000원</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="card shadow-sm">
+                  <img class="card-img-top" src="/images/신상품2.jpg" style="height: 300px;">
+                  <div class="card-body">
+                    <h5 class="card-text text-center">모던 4단 캣타워</h5>
+                    <p class="card-text text-center">172,000원</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="card shadow-sm">
+                  <img class="card-img-top" src="/images/신상품3.jpg" style="height: 300px;">
+                  <div class="card-body">
+                    <h5 class="card-text text-center">집콕 전자레인지</h5>
+                    <p class="card-text text-center">17,000원</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="card shadow-sm">
+                  <img class="card-img-top" src="/images/신상품4.jpg" style="height: 300px;">
+                  <div class="card-body">
+                    <h5 class="card-text text-center">프린세스 흰살생선 주식캔</h5>
+                    <p class="card-text text-center">2,500원</p>
+                  </div>
+                </div>
+              </div>
+             
+            </div>
+            
+            
+            <div class="row mb-3">
+              <div class="col-sm">
+                <div class="card shadow-sm">
+                  <img class="card-img-top" src="/images/신상품5.jpg" style="height: 300px;">
+                  <div class="card-body">
+                    <h5 class="card-text text-center">스크래쳐 세탁기</h5>
+                    <p class="card-text text-center">24,000원</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="card shadow-sm">
+                  <img class="card-img-top" src="/images/신상품6.jpg" style="height: 300px;">
+                  <div class="card-body">
+                    <h5 class="card-text text-center">춤추는새 만타가오리</h5>
+                    <p class="card-text text-center">7,500원</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="card shadow-sm">
+                  <img class="card-img-top" src="/images/신상품7.jpg" style="height: 300px;">
+                  <div class="card-body">
+                    <h5 class="card-text text-center">펫케어 스마트우주선</h5>
+                    <p class="card-text text-center">35,800원</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="card shadow-sm">
+                  <img class="card-img-top" src="/images/신상품8.jpg" style="height: 300px;">
+                  <div class="card-body">
+                    <h5 class="card-text text-center">캣닢 쿠션 당근</h5>
+                    <p class="card-text text-center">6,800원</p>
+                  </div>
+                </div>
+              </div>
+              
+            </div> -->
+          </div>
+          
+        </div>
+    
+    <br>
+	</main>
+
+	<footer th:include="layout/footer :: footer"></footer>
+
+</body>
+</html>

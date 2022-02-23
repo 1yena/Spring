@@ -1,0 +1,16 @@
+package com.bitc.java404.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.bitc.java404.dto.userDto;
+
+public class QuizServiceImpl implements QuizService {
+	
+	/*
+	 * @Autowired private
+	 * 
+	 * @Override public userDto selectUser() throws Exception { // TODO
+	 * Auto-generated method stub return null; }
+	 */
+
+}

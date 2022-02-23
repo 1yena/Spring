@@ -1,0 +1,13 @@
+
+server.port=8080
+
+spring.datasource.hikari.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.hikari.jdbc-url=jdbc:mysql://58.239.58.243:3306/AWS 서버의 mysql?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+spring.datasource.hikari.username=java404user
+spring.datasource.hikari.password=BITCjava404!@#$
+spring.datasource.hikari.connection-test-query=SELECT 1
+
+mybatis.configuration.map-underscore-to-camel-case=true
+
+spring.mvc.hiddenmethod.filter.enabled=true
+
