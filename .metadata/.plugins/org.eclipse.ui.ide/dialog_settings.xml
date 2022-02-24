@@ -58,6 +58,8 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\java404\workspace-sts4.13.1\Team6"/>
+			<item value="C:\java404\workspace-sts4.13.1\CatProject"/>
 			<item value="C:\java404\workspace-sts4.13.1\SpringBootBoard"/>
 			<item value="C:\java404\workspace-sts4.13.1\appServer"/>
 			<item value="C:\java404\workspace-sts4.13.1\projectCatShop"/>

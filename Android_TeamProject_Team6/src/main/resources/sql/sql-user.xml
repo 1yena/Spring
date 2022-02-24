@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bitc.team2.mapper.UserMapper">
+<select id="loginCheck" parameterType="map" resultType="int">
+<![CDATA[ 
+	select
+		COUNT(*) AS cnt
+	from
+		user
+	where
+		user_id=#{userId}
+		AND
+		user_pw =#{userPw}
+]]>
+</select >
+<insert id="userJoin" parameterType="com.bitc.team2.dto.UserDto">
+<![CDATA[ 
+	insert into user
+		(user_id,user_pw, user_name, user_addr, user_phone,user_addr_detail)
+	values
+	(#{userId},#{userPw},#{userName},#{userAddr},#{userPhone},#{userAddrDetail})
+]]>
+</insert>
+
+</mapper >
